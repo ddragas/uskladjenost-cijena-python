@@ -5,7 +5,7 @@
     api = Client("pc_live_...")
     item = api.items.upsert("SKU-1", merchant_id=m, kind="product", name="Deterdžent 3 kg")
     api.prices.record_by_external("SKU-1", regular_price_minor=1250, location_code="PU-01")
-    print(api.compliance.by_external("SKU-1")["data"]["anchor_display"]["label"])
+    print(api.compliance.by_external("SKU-1")["data"]["base_price"]["label"])
 """
 
 from .client import ApiError, Client

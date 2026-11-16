@@ -1,6 +1,6 @@
 # Usklađenost cijena – Python SDK
 
-Python klijent za API servisa [Usklađenost cijena](https://uskladjenost-cijena.com): sidrene cijene i javni strojno čitljiv cjenik po NN 101/2026. Pokriva cijeli API: trgovce, lokacije i kanale, katalog, cijene, odluke o usklađenosti, objave cjenika, uvoz datoteka i webhookove, uz provjeru potpisa webhook isporuka.
+Python klijent za API servisa [Usklađenost cijena](https://uskladjenost-cijena.com): bazne cijene i javni strojno čitljiv cjenik po NN 132/2026. Pokriva cijeli API: trgovce, lokacije i kanale, katalog, cijene, odluke o usklađenosti, objave cjenika, uvoz datoteka i webhookove, uz provjeru potpisa webhook isporuka.
 
 ```bash
 pip install uskladjenost-cijena
@@ -23,7 +23,7 @@ api.prices.record_by_external("SKU-1", regular_price_minor=1250, effective_price
 
 # 3. Što ispisati uz cijenu (compliance:read)
 decision = api.compliance.by_external("SKU-1", location_code="PU-01")
-print(decision["data"]["anchor_display"]["label"])  # "Cijena na dan 10. 9. 2026.: 12,50 €" ili None
+print(decision["data"]["base_price"]["label"])  # "Bazna cijena na dan 10. 9. 2026.: 12,50 €" ili None
 ```
 
 ## Sve metode

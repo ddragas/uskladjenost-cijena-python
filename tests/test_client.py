@@ -65,7 +65,7 @@ def test_prices_go_in_by_offer_or_by_the_callers_id(api):
 
 @responses.activate
 def test_compliance_publications_imports_and_webhooks(api):
-    responses.get(f"{BASE}/api/v1/compliance/by-external/SKU-1", json={"data": {"anchor_display": {"label": "Cijena na dan 10. 9. 2026.: 22,00 €"}}})
+    responses.get(f"{BASE}/api/v1/compliance/by-external/SKU-1", json={"data": {"anchor_display": {"label": "Bazna cijena na dan 10. 9. 2026.: 22,00 €"}}})
     assert "22,00" in api.compliance.by_external("SKU-1", location_code="PU-01", locale="hr")["data"]["anchor_display"]["label"]
     assert responses.calls[0].request.params == {"location_code": "PU-01", "locale": "hr"}
 
