@@ -4,7 +4,7 @@ from typing import IO, Any, Dict, Iterator, List, Optional, Union
 
 import requests
 
-__version__ = "1.0.0"
+__version__ = "1.1.0"
 
 Json = Dict[str, Any]
 
